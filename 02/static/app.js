@@ -17,9 +17,10 @@ var items = [
 ]
 
 var vm = new Vue({
-    el: '#app',
+    el: '#b-button',
     data: {
-        items: items
+        loggedInButton: 'ログイン済のため購入できます。',
+        canBuy: true
     }
 })
 
