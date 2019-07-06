@@ -27,6 +27,9 @@ var vm = new Vue({
                 return '0'
             }
             return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+        },
+        applyTax: function (value) {
+            return Math.floor(value * 1.08)
         }
     },
     computed: {
@@ -35,8 +38,14 @@ var vm = new Vue({
                 return sum + (item.price * item.quantity)
             }, 0)
         },
-        totalPriceWithTax: function() {
-            return Math.floor(this.totalPrice * 1.08)
+        canBuy: function() {
+            return this.totalPrice >= 1000
+        },
+        errorMessageStyle: function() {
+            return {
+                border: this.canBuy ? '' : '1px solid red',
+                color: this.canBuy ? '' : 'red'
+            }
         }
     }
 })
