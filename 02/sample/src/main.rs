@@ -19,7 +19,7 @@ impl Path {
 fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .service(actix_files::Files::new("/", Path::Lifecycle.build()).index_file("index.html"))
+            .service(actix_files::Files::new("/", Path::Items.build()).index_file("index.html"))
     })
     .bind(PORT)?
     .run()
