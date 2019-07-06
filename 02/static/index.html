@@ -9,7 +9,8 @@
 
 <body>
     <div id="app">
-        <button id="b-button" v-bind:title="loggedInButton" v-bind:disabled="!canBuy">購入</button>
+        <p>{{ items[0].name }}: {{ items[0].price }} ☓ {{ items[0].quantity }}</p>
+        <p>フィルタ処理例 {{ 1000 | numberWithDelimiter }}</p>
     </div>
     <script src="app.js"></script>
 </body>

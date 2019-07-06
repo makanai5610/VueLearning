@@ -17,10 +17,17 @@ var items = [
 ]
 
 var vm = new Vue({
-    el: '#b-button',
+    el: '#app',
     data: {
-        loggedInButton: 'ログイン済のため購入できます。',
-        canBuy: true
+        items: items
+    },
+    filters: {
+        numberWithDelimiter: function (value) {
+            if (!value) {
+                return '0'
+            }
+            return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+        }
     }
 })
 
