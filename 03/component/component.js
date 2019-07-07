@@ -1,5 +1,8 @@
 Vue.component('list-item', {
-    template: '<li>foo</li>'
+    template: '<li>foo {{ contents }}</li>',
+    data: function() {
+        return {contents: 'bar'}
+    }
 })
 
 new Vue({ el: '#example' })
