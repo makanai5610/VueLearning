@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    <div id="fruits-component">
+        <ol>
+            <fruits-item-name v-for="fruit in fruitsItems" :key="fruit.name" :fruits-item="fruit"></fruits-item-name>
+        </ol>
+    </div>
     <div id="app">
         <item-desc :item-name='myItem'></item-desc>
     </div>
