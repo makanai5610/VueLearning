@@ -1,9 +1,8 @@
-var count = 0
 var vm = new Vue({
     el: '#app',
     data: function() {
         return {
-            count: count,
+            count: 0,
             timerId: null
         }
     },
